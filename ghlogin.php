@@ -1,8 +1,8 @@
 <?php
 // Get the temporary GitHub code from the request query parameters
 
-$CLIENT_ID = '';
-$CLIENT_SECRET = '';
+$CLIENT_ID = '5468fae20a95a76e6563';
+$CLIENT_SECRET = 'aef51719faa4e2e049d3cff2467896c90f79e5eb';
 
 $sessionCode = $_GET['code'];
 
@@ -28,6 +28,7 @@ $accessToken = $jresult['access_token'];
 
 setcookie('access_token', $accessToken, 0, '/');
 // echo "the code is " + $sessionCode;
+header('Location: uname.php');
 
 ?>
 

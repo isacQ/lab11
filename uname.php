@@ -1,6 +1,5 @@
 <?php
 
-
 $curl = curl_init();
 
 $accessToken = $_COOKIE['access_token'];
@@ -36,7 +35,13 @@ foreach ($emails_jarr as $item) {
     }
 }
 
+$Allowed = ['bilguunerkhembayar3@gmail.com'];
+$isAllowed = !empty(array_intersect($emails,$Allowed));
 
+if(!$isAllowed) {
+    echo "<script>alert(\"Zovshoorolgui hereglech!!!\")</script>";
+    exit();
+}
 ?>
 
 <div> Current user email addressess:
@@ -52,6 +57,6 @@ foreach ($emails_jarr as $item) {
     ?>
 
 
-    <!-- <?php print_r(implode(',', $emails)) ?></div> -->
+    <?php print_r(implode(',', $emails)) ?></div>
 
-    <!-- <pre><?php print_r($result) ?></pre> -->
+    <pre><?php print_r($result) ?></pre>
